@@ -16,9 +16,9 @@ const parseSite = async (site) => {
         fs.appendFile(site.log, data, function (err) {
           if (err) return console.log(err);
         });
-
+        
         request.post(
-          `https://graph.facebook.com/v8.0/2039216499697073/feed?link=${item.link}&message=${item.description}&access_token=${process.env.TOKEN}`
+          `https://graph.facebook.com/v8.0/2039216499697073/feed?link=${item.link}&message=${item.content}&access_token=${process.env.TOKEN}`
         );
         return;
       }
